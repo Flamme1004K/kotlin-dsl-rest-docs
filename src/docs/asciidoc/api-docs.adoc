@@ -1,0 +1,19 @@
+ifndef::snippets[]
+:snippets: ../../../build/generated-snippets
+endif::[]
+= Application Name
+:toc: left
+:toclevels: 2
+:sectlinks:
+
+[[product-api]]
+=== 조회 API
+
+==== HTTP request
+include::{snippets}/product/get-product-by-id/path-parameters.adoc[]
+include::{snippets}/product/get-product-by-id/http-request.adoc[]
+
+==== HTTP response
+include::{snippets}/product/get-product-by-id/response-fields.adoc[]
+include::{snippets}/product/get-product-by-id/response-body.adoc[]
+include::{snippets}/product/get-product-by-id/http-response.adoc[]
