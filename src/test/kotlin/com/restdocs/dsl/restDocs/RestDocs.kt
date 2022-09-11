@@ -29,7 +29,9 @@ import org.springframework.web.filter.CharacterEncodingFilter
 
 @ExtendWith(RestDocumentationExtension::class, SpringExtension::class)
 @AutoConfigureCache
-class RestDocs(val mapper: ObjectMapper) {
+open class RestDocs {
+
+    val mapper: ObjectMapper = ObjectMapper()
 
     lateinit var mockMvc: MockMvc
 
