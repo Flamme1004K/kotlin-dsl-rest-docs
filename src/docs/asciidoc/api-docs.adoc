@@ -6,14 +6,16 @@ endif::[]
 :toclevels: 2
 :sectlinks:
 
+
+
 [[product-api]]
 === 조회 API
 
 ==== HTTP request
-include::{snippets}/product/get-product-by-id/path-parameters.adoc[]
-include::{snippets}/product/get-product-by-id/http-request.adoc[]
+include::{snippets}/product/product-read/path-parameters.adoc[]
+include::{snippets}/product/product-read/http-request.adoc[]
 
 ==== HTTP response
-include::{snippets}/product/get-product-by-id/response-fields.adoc[]
-include::{snippets}/product/get-product-by-id/response-body.adoc[]
-include::{snippets}/product/get-product-by-id/http-response.adoc[]
+include::{snippets}/product/product-read/response-fields.adoc[snippets='response-fields']
+include::{snippets}/product/product-read/response-body.adoc[]
+include::{snippets}/product/product-read/http-response.adoc[]

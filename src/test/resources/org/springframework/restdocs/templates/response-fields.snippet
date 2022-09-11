@@ -1,0 +1,15 @@
+===== Response Fields
+|===
+|이름|타입|필수값|설명|제약조건|형식
+
+{{#fields}}
+    |{{#tableCellContent}}`+{{path}}+`{{/tableCellContent}}
+    |{{#tableCellContent}}`+{{type}}+`{{/tableCellContent}}
+    |{{#tableCellContent}}{{^optional}}true{{/optional}}{{/tableCellContent}}
+    |{{#tableCellContent}}{{description}}{{/tableCellContent}}
+    |{{#tableCellContent}}{{constraints}}{{/tableCellContent}}
+    |{{#tableCellContent}}{{format}}{{/tableCellContent}}
+
+{{/fields}}
+
+|===

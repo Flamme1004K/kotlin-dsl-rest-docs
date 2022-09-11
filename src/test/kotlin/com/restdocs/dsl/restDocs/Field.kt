@@ -1,17 +1,30 @@
 package com.restdocs.dsl.restDocs
 
 import org.springframework.restdocs.payload.FieldDescriptor
+import org.springframework.restdocs.snippet.Attributes.key
 
 class Field(
     val descriptor: FieldDescriptor
 ) {
-    val isIgnored: Boolean = descriptor.isIgnored
-    val isOptional: Boolean = descriptor.isOptional
+    init {
+        descriptor.attributes(key("constraints").value(""))
+        descriptor.attributes(key("format").value(""))
+    }
 
     infix fun means(value: String): Field = Field(descriptor.description(value))
 
-    infix fun Field.attributes(block: Field.() -> Unit): Field {
-        block()
+    infix fun isOptional(value: Boolean): Field {
+        if (value) descriptor.optional()
+        return this
+    }
+
+    infix fun addConstraint(value: String): Field {
+        descriptor.attributes(key("constraints").value(value))
+        return this
+    }
+
+    infix fun addFormat(value: String): Field {
+        descriptor.attributes(key("format").value(value))
         return this
     }
 }
