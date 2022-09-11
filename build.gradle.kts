@@ -36,6 +36,10 @@ tasks.withType<KotlinCompile> {
     }
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 tasks.asciidoctor {
     inputs.dir(snippetsDir)
     dependsOn(tasks.test) // 변경
