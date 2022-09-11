@@ -9,6 +9,7 @@ import org.springframework.restdocs.RestDocumentationExtension
 import org.springframework.restdocs.generate.RestDocumentationGenerator
 import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation
 import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration
+import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders
 import org.springframework.restdocs.operation.preprocess.OperationRequestPreprocessor
 import org.springframework.restdocs.operation.preprocess.OperationResponsePreprocessor
 import org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessRequest
@@ -53,16 +54,6 @@ open class RestDocs {
     }
 
     fun given() = mockMvc
-}
-
-fun MockMvc.get(
-    urlTemplate: String,
-    vararg vars: Any?
-): ResultActionsDsl = this.get(urlTemplate, vars) {
-    requestAttr(
-        RestDocumentationGenerator.ATTRIBUTE_NAME_URL_TEMPLATE,
-        urlTemplate
-    )
 }
 
 fun ResultActions.makeDocument(
