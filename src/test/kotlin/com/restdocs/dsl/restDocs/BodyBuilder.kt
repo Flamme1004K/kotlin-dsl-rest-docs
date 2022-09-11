@@ -6,8 +6,6 @@ import org.springframework.restdocs.payload.PayloadDocumentation.requestFields
 import org.springframework.restdocs.payload.PayloadDocumentation.responseFields
 import org.springframework.restdocs.payload.RequestFieldsSnippet
 import org.springframework.restdocs.payload.ResponseFieldsSnippet
-import org.springframework.restdocs.request.RequestDocumentation
-import org.springframework.restdocs.request.RequestParametersSnippet
 
 class BodyBuilder {
     private val fields = mutableListOf<FieldDescriptor>()
