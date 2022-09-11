@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 @WebMvcTest(ProductController::class)
 class ProductControllerTests : RestDocs() {
@@ -21,7 +22,7 @@ class ProductControllerTests : RestDocs() {
             )
         ).makeDocument(
             "product/product-read",
-            MockMvcResultMatchers.status().isOk,
+            status().isOk,
             pathVariable {
                 "code" means "상품 번호"
             },
@@ -32,26 +33,4 @@ class ProductControllerTests : RestDocs() {
             }
         )
     }
-
-    // @Test
-    // fun `GET v1-product 200 ok document`() { // 2
-    //     // When
-    //     val result = mockMvc.perform(RestDocumentationRequestBuilders.get("/v1/products/{code}", 2))
-    //
-    //     // Then
-    //     result.andExpect(status().isOk)
-    //         .andExpect(MockMvcResultMatchers.content().string(containsString("Monitor")))
-    //         .andDo(
-    //             document(
-    //                 "product/get-product-by-id",
-    //                 pathParameters(
-    //                     parameterWithName("code").description("Product Unique Identifier")
-    //                 ), responseFields(
-    //                     fieldWithPath("code").description("Product Unique Identifier"),
-    //                     fieldWithPath("name").description("Name of the product"),
-    //                     fieldWithPath("price").description("Product Price")
-    //                 )
-    //             )
-    //         )
-    // }
 }
